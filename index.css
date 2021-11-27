@@ -35,13 +35,13 @@ body {
 .titleSpace .titleGrid {
   display: grid;
   grid-template-columns: 45% min(10px, 1vh, 1vw) 54%;
-  padding: 0 0 5vh 0;
+  padding: 0 0 max(40px, 5vh) 0;
 }
 .titleSpace .titleGrid * {
   color: rgba(255, 255, 255, 0.7);
   font-family: "Outfit", sans-serif;
   padding: 0 5% 0 2.5%;
-  line-height: 90%;
+  line-height: 110%;
   user-select: none;
 }
 .titleSpace .titleGrid .titleName {
@@ -49,6 +49,7 @@ body {
   font-size: max(15vw, 300%);
   font-weight: 600;
   user-select: none;
+  line-height: 90%;
   display: none;
 }
 @keyframes inAndOut {
@@ -66,6 +67,7 @@ body {
   }
 }
 .titleSpace .titleGrid .titleName .firstName {
+  padding-right: 0;
   color: #4ad3d3;
 }
 .titleSpace .titleGrid .titleName:hover {
@@ -78,21 +80,21 @@ body {
 }
 .titleSpace .titleGrid .titleJobs {
   text-align: left;
-  font-size: max(10vw, 200%);
+  font-size: max(9vw, 200%);
   font-weight: 300;
 }
 .titleSpace .titleGrid .titleJobs * {
   display: none;
 }
-.titleSpace .titleGrid .titleJobs *:hover {
-  transform: scale(1.05);
+.titleSpace .titleGrid .titleJobs #job3 {
+  padding-right: 0;
 }
 .titleSpace .titleGrid .titleJobs .cursor {
   display: inline-block;
   color: #4ad3d3;
   padding: 0;
   opacity: 0;
-  animation: 1.5s linear 1s infinite inAndOut;
+  animation: 1.2s linear 0s infinite inAndOut;
   font-weight: 100;
 }
 @keyframes titleAnim1 {

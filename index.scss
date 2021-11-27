@@ -43,10 +43,10 @@ body {
 
   .titleGrid {
     $nameHeight: max(15vw, 300%);
-    $jobHeight: max(15vw * 2 / 3, 200%);
+    $jobHeight: max(15vw * 3 / 5, 200%);
     display: grid;
     grid-template-columns: 45% min(10px, 1vh, 1vw) 54%;
-    padding: 0 0 5vh 0;
+    padding: 0 0 max(40px, 5vh) 0;
     //opacity: 0;
     //visibility: hidden;
 
@@ -55,7 +55,7 @@ body {
       color: $textColor;
       font-family: 'Outfit', sans-serif;
       padding: 0 5% 0 2.5%;
-      line-height: 90%;
+      line-height: 110%;
       user-select: none;
 
     }
@@ -66,6 +66,7 @@ body {
       font-size: $nameHeight;
       font-weight: 600;
       user-select: none;
+      line-height: 90%;
       display: none;
 
       @keyframes inAndOut {
@@ -85,6 +86,7 @@ body {
       }
 
       .firstName {
+        padding-right: 0;
         color: $complimentary;
       }
 
@@ -110,9 +112,12 @@ body {
       * {
         display: none;
 
-        &:hover {
-          transform: scale(1.05);
-        }
+      }
+
+      #job3 {
+        padding-right: 0;
+
+        //margin: 0;
       }
 
       .cursor {
@@ -121,10 +126,8 @@ body {
         //color: ;
         padding: 0;
         opacity: 0;
-        animation: 1.5s linear 1s infinite inAndOut;
+        animation: 1.2s linear 0s infinite inAndOut;
         font-weight: 100;
-
-
       }
 
     }
