@@ -9,6 +9,7 @@ body {
   background-color: #121212;
   margin: 0;
   padding: max(10vh, 30px) 0 0 0;
+  height: 200vh;
 }
 
 .header {
@@ -16,45 +17,98 @@ body {
   width: 100%;
   height: max(10vh, 30px);
   position: fixed;
-  background-color: #121212;
+  background-color: #282828;
+  z-index: 1;
 }
 
-.titleGrid {
-  display: grid;
-  grid-template-columns: 45% 1% 54%;
-  padding: 0 0 max(10vh, 30px) 0;
+.titleSpace {
+  margin-top: 5vh;
 }
-.titleGrid * {
-  color: rgba(255, 255, 255, 0.5);
+@keyframes titleAnim {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+.titleSpace .titleGrid {
+  display: grid;
+  grid-template-columns: 45% min(10px, 1vh, 1vw) 54%;
+  padding: 0 0 5vh 0;
+}
+.titleSpace .titleGrid * {
+  color: rgba(255, 255, 255, 0.7);
   font-family: "Outfit", sans-serif;
-  padding: 0 10% 0 5%;
+  padding: 0 5% 0 2.5%;
   line-height: 90%;
   user-select: none;
 }
-.titleGrid .titleName {
+.titleSpace .titleGrid .titleName {
   text-align: right;
   font-size: max(15vw, 300%);
   font-weight: 600;
   user-select: none;
   display: none;
 }
-.titleGrid .titleName:hover {
+@keyframes inAndOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0%;
+  }
+  55% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+.titleSpace .titleGrid .titleName .firstName {
+  color: #4ad3d3;
+}
+.titleSpace .titleGrid .titleName:hover {
   transform: scale(1.05);
 }
-.titleGrid .titleSeparator {
-  background-color: rgba(255, 255, 255, 0.5);
-  display: none;
+.titleSpace .titleGrid .titleSeparator {
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scaleY(0);
+  animation: 1s ease-in-out 0.2s 1 titleAnim forwards;
 }
-.titleGrid .titleJobs {
+.titleSpace .titleGrid .titleJobs {
   text-align: left;
   font-size: max(10vw, 200%);
   font-weight: 300;
 }
-.titleGrid .titleJobs * {
+.titleSpace .titleGrid .titleJobs * {
   display: none;
 }
-.titleGrid .titleJobs *:hover {
+.titleSpace .titleGrid .titleJobs *:hover {
   transform: scale(1.05);
+}
+.titleSpace .titleGrid .titleJobs .cursor {
+  display: inline-block;
+  color: #4ad3d3;
+  padding: 0;
+  opacity: 0;
+  animation: 1.5s linear 1s infinite inAndOut;
+  font-weight: 100;
+}
+@keyframes titleAnim1 {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.titleSpace .titleHorizontalBar {
+  height: min(10px, 1vh, 1vw);
+  background-color: rgba(255, 255, 255, 0.7);
+  margin: 0 10% 0 10%;
+  transform: scaleX(0);
+  animation: 1s ease-in-out 0.2s 1 titleAnim1 forwards;
 }
 
 /*# sourceMappingURL=index.css.map */

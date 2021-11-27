@@ -1,5 +1,7 @@
 $bgcolor: #121212;
-$textColor: rgba(255, 255, 255, 0.5);
+$highlightColor1: #282828;
+$complimentary: #4ad3d3;
+$textColor: rgba(255, 255, 255, 0.7);
 $headerHeight: max(10vh, 30px);
 
 * {
@@ -13,6 +15,7 @@ body {
   background-color: $bgcolor;
   margin: 0;
   padding: $headerHeight 0 0 0;
+  height: 200vh;
 }
 
 .header {
@@ -20,64 +23,138 @@ body {
   width: 100%;
   height: $headerHeight;
   position: fixed;
-  background-color: $bgcolor;
+  background-color: $highlightColor1;
+  z-index: 1;
 }
 
-.titleGrid {
+.titleSpace {
 
-  $nameHeight: max(15vw, 300%);
-  $jobHeight: max(15vw * 2 / 3, 200%);
-  display: grid;
-  grid-template-columns: 45% 1% 54%;
-  padding: 0 0 $headerHeight 0;
-  //opacity: 0;
-  //visibility: hidden;
+  @keyframes titleAnim {
+    0% {
+      transform: scaleY(0);
+    }
 
-  //grid-gap: 1%;
-  * {
-    color: $textColor;
-    font-family: 'Outfit', sans-serif;
-    padding: 0 10% 0 5%;
-    line-height: 90%;
-    user-select: none;
-
-  }
-
-  .titleName {
-
-    text-align: right;
-    font-size: $nameHeight;
-    font-weight: 600;
-    user-select: none;
-    display: none;
-
-    &:hover {
-      transform: scale(1.05);
+    100% {
+      transform: scaleY(1);
     }
   }
 
-  .titleSeparator {
-    background-color: $textColor;
-    display: none;
-  }
+  margin-top: 5vh;
 
-  .titleJobs {
-    text-align: left;
-    font-size: $jobHeight;
-    font-weight: 300;
+  .titleGrid {
+    $nameHeight: max(15vw, 300%);
+    $jobHeight: max(15vw * 2 / 3, 200%);
+    display: grid;
+    grid-template-columns: 45% min(10px, 1vh, 1vw) 54%;
+    padding: 0 0 5vh 0;
+    //opacity: 0;
+    //visibility: hidden;
 
+    //grid-gap: 1%;
     * {
+      color: $textColor;
+      font-family: 'Outfit', sans-serif;
+      padding: 0 5% 0 2.5%;
+      line-height: 90%;
+      user-select: none;
+
+    }
+
+    .titleName {
+
+      text-align: right;
+      font-size: $nameHeight;
+      font-weight: 600;
+      user-select: none;
       display: none;
+
+      @keyframes inAndOut {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0%;
+        }
+
+        55% {
+          opacity: 100%;
+        }
+        100% {
+          opacity: 100%;
+        }
+      }
+
+      .firstName {
+        color: $complimentary;
+      }
+
 
       &:hover {
         transform: scale(1.05);
       }
     }
+
+    .titleSeparator {
+      background-color: $textColor;
+      transform: scaleY(0);
+      animation: 1s ease-in-out 0.2s 1 titleAnim forwards;
+      //display: none;
+
+    }
+
+    .titleJobs {
+      text-align: left;
+      font-size: $jobHeight;
+      font-weight: 300;
+
+      * {
+        display: none;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      .cursor {
+        display: inline-block;
+        color: $complimentary;
+        //color: ;
+        padding: 0;
+        opacity: 0;
+        animation: 1.5s linear 1s infinite inAndOut;
+        font-weight: 100;
+
+
+      }
+
+    }
+
+    ////transition-timing-function: ease-out;
+    //
+
   }
 
-  ////transition-timing-function: ease-out;
-  //
+  @keyframes titleAnim1 {
+    0% {
+      transform: scaleX(0);
+      //padding: 50% 0 50% 0 ;
+    }
 
+    100% {
+      transform: scaleX(1);
+      //padding: 10% 0 10% 0;
+    }
+  }
+
+  .titleHorizontalBar {
+    height: min(10px, 1vh, 1vw);
+    background-color: $textColor;
+    margin: 0 10% 0 10%;
+    transform: scaleX(0);
+    animation: 1s ease-in-out 0.2s 1 titleAnim1 forwards;
+  }
 }
+
+
 
 
