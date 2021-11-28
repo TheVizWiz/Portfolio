@@ -1,5 +1,7 @@
 $bgcolor: #121212;
-$highlightColor1: #282828;
+$highlight1: #323232;
+$highlight2: #1a1a1a;
+$highlight3: 0;
 $complimentary: #4ad3d3;
 $textColor: rgba(255, 255, 255, 0.7);
 $headerHeight: max(10vh, 30px);
@@ -7,7 +9,8 @@ $headerHeight: max(10vh, 30px);
 //font sizes
 $h1: max(15vw, 300%);
 $h2: max(15vw * 3 / 5, 200%);
-
+$h3: max(15vw * 2 / 5, 200%);
+$h4: max(15vw * 1 / 5, 150%);
 
 * {
   margin: 0;
@@ -19,17 +22,54 @@ $h2: max(15vw * 3 / 5, 200%);
 body {
   background-color: $bgcolor;
   margin: 0;
-  padding: $headerHeight 0 0 0;
   height: 200vh;
 }
 
 .header {
   top: 0;
   width: 100%;
-  height: $headerHeight;
+  //height: $headerHeight;
   position: fixed;
-  background-color: $highlightColor1;
+  background-color: $highlight1;
   z-index: 1;
+  display: grid;
+  padding: 0 2% 0 2%;
+  grid-template-columns: 66% 10% 10% 10%;
+  transition-duration: 0.5s;
+
+  .headerItem {
+    font-family: Outfit, sans-serif;;
+    //font-size: $h4;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    transition-duration: 0.2s;
+    cursor: pointer;
+
+
+
+  }
+
+  .logo {
+    //width: auto;
+    //height: auto;
+    max-width: 60%;
+    max-height: 60%;
+  }
+
+  @keyframes rotateHeader {
+    0% {transform: rotate(0)}
+    100%{transform: rotate(360deg)}
+  }
+  #headerName {
+    margin: auto auto auto 0;
+    font-size: 5vmax;
+    &::first-letter {
+      color: $complimentary;
+    }
+
+    animation: 1s ease-out 0s 1 rotateHeader forwards;
+  }
 }
 
 .titleSpace {
@@ -51,7 +91,7 @@ body {
     $jobHeight: max(15vw * 3 / 5, 200%);
     display: grid;
     grid-template-columns: 45% min(10px, 1vh, 1vw) 54%;
-    padding: 0 0 max(40px, 5vw) 0;
+    padding: 10vw 0 max(40px, 5vw) 0;
     //opacity: 0;
     //visibility: hidden;
 
@@ -203,7 +243,7 @@ body {
     grid-template-columns: 70% 1% 29%;
     grid-template-rows: 100%;
     border-radius: 10px;
-    background-color: $highlightColor1;
+    background-color: $highlight2;
   }
 
 }

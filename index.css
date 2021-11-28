@@ -8,17 +8,47 @@
 body {
   background-color: #121212;
   margin: 0;
-  padding: max(10vh, 30px) 0 0 0;
   height: 200vh;
 }
 
 .header {
   top: 0;
   width: 100%;
-  height: max(10vh, 30px);
   position: fixed;
-  background-color: #282828;
+  background-color: #323232;
   z-index: 1;
+  display: grid;
+  padding: 0 2% 0 2%;
+  grid-template-columns: 66% 10% 10% 10%;
+  transition-duration: 0.5s;
+}
+.header .headerItem {
+  font-family: Outfit, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+.header .logo {
+  max-width: 60%;
+  max-height: 60%;
+}
+@keyframes rotateHeader {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.header #headerName {
+  margin: auto auto auto 0;
+  font-size: 5vmax;
+  animation: 1s ease-out 0s 1 rotateHeader forwards;
+}
+.header #headerName::first-letter {
+  color: #4ad3d3;
 }
 
 .titleSpace {
@@ -35,7 +65,7 @@ body {
 .titleSpace .titleGrid {
   display: grid;
   grid-template-columns: 45% min(10px, 1vh, 1vw) 54%;
-  padding: 0 0 max(40px, 5vw) 0;
+  padding: 10vw 0 max(40px, 5vw) 0;
 }
 .titleSpace .titleGrid * {
   color: rgba(255, 255, 255, 0.7);
@@ -89,7 +119,7 @@ body {
 }
 .titleSpace .titleGrid .titleJobs {
   text-align: left;
-  font-size: max(9vw, 200%);
+  font-size: max(15vw * 3 / 5, 200%);
   font-weight: 300;
 }
 .titleSpace .titleGrid .titleJobs * {
@@ -129,7 +159,7 @@ body {
   font-family: Outfit, sans-serif;
   text-align: center;
   margin: 3vh 0 3vh 0;
-  font-size: max(9vw, 200%);
+  font-size: max(15vw * 3 / 5, 200%);
   font-weight: bold;
 }
 .project .projectGrid {
@@ -145,7 +175,7 @@ body {
   grid-template-columns: 70% 1% 29%;
   grid-template-rows: 100%;
   border-radius: 10px;
-  background-color: #282828;
+  background-color: #1a1a1a;
 }
 
 /*# sourceMappingURL=index.css.map */

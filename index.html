@@ -23,9 +23,21 @@
 </head>
 
 <body>
-<div class="header">
-
+<div class="header"
+     onmouseleave='zoomTopBar()' onmouseenter='$(".logo").css("max-width", "").css("max-height", ""); $("#headerName").css("font-size", "")
+     if (document.documentElement.getBoundingClientRect().width > 600) {
+         $(".header").css("padding", "")
+     }'>
+    <div class="headerItem" id="headerName" onclick="scrollToTop(1000); rotateHeaderName()">vi</div>
+    <img src="media/logos/github.png" class="headerItem logo" alt="github"
+         onclick="window.open('https://github.com/TheVizWiz', '_blank')">
+    <img src="media/logos/linkedin.png" class="headerItem logo" alt="linkedin"
+         onclick="window.open('https://www.linkedin.com/in/vibhuiyer/', '_blank')">
+    <img src="media/logos/email.png" class="headerItem logo" alt="email"
+         onclick="window.open('mailto:vibhusiyer@gmail.com?subject=Contact | Website', '_blank')">
 </div>
+
+
 <div class="titleSpace">
     <div class="titleGrid" id="test">
         <div class="titleName">
