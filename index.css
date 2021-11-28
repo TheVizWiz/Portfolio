@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: "Times New Roman", serif;
-  color: cornflowerblue;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 body {
@@ -35,7 +35,7 @@ body {
 .titleSpace .titleGrid {
   display: grid;
   grid-template-columns: 45% min(10px, 1vh, 1vw) 54%;
-  padding: 0 0 max(40px, 5vh) 0;
+  padding: 0 0 max(40px, 5vw) 0;
 }
 .titleSpace .titleGrid * {
   color: rgba(255, 255, 255, 0.7);
@@ -50,7 +50,16 @@ body {
   font-weight: 600;
   user-select: none;
   line-height: 90%;
-  display: none;
+  opacity: 0;
+  animation: 2s linear 0.1s 1 animIn forwards;
+}
+@keyframes animIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 @keyframes inAndOut {
   0% {
@@ -111,6 +120,32 @@ body {
   margin: 0 10% 0 10%;
   transform: scaleX(0);
   animation: 1s ease-in-out 0.2s 1 titleAnim1 forwards;
+}
+
+.project::first-letter {
+  color: #4ad3d3;
+}
+.project .projectTitle {
+  font-family: Outfit, sans-serif;
+  text-align: center;
+  margin: 3vh 0 3vh 0;
+  font-size: max(9vw, 200%);
+  font-weight: bold;
+}
+.project .projectGrid {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 1vh;
+  justify-items: center;
+}
+.project .projectCard {
+  width: 90%;
+  height: 100px;
+  display: grid;
+  grid-template-columns: 70% 1% 29%;
+  grid-template-rows: 100%;
+  border-radius: 10px;
+  background-color: #282828;
 }
 
 /*# sourceMappingURL=index.css.map */

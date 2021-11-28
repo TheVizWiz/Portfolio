@@ -7,7 +7,7 @@ $(function () {
 
     cursor.css("animation-play-state", "paused")
     selectors.css("pointer-events", "none");
-    $(".titleName").fadeIn(time );
+    // $(".titleName").fadeIn(time );
     for (let i = 1; i < 4; i++) {
         setTimeout(() => {
             $("#job" + i).hide().fadeIn(time);
