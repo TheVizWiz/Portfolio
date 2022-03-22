@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+    <link rel="icon" href="media/icon.png">
     <!--    fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/two.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/projectScraper.js"></script>
     <link rel="stylesheet" href="index.css">
 
 
@@ -28,7 +30,9 @@
      if (document.documentElement.getBoundingClientRect().width > 600) {
          $(".header").css("padding", "")
      }'>
-    <div class="headerItem" id="headerName" onclick="scrollToTop(1000); rotateHeaderName()">vi</div>
+    <div class="headerItem" id="headerName" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); rotateHeaderName()">
+        vi
+    </div>
     <img src="media/logos/github.png" class="headerItem logo" alt="github"
          onclick="window.open('https://github.com/TheVizWiz', '_blank')">
     <img src="media/logos/linkedin.png" class="headerItem logo" alt="linkedin"
@@ -64,9 +68,37 @@
 
     <div class="projectGrid">
 
-        <div class="projectCard" id="card1">card1</div>
-        <div class="projectCard" id="card2">card2</div>
-        <div class="projectCard" id="card3">card3</div>
+
+        <div class="projectCard" id="card1">
+            <div class="projectCardTitle cardTitle">Edgewalker</div>
+            <div class="projectCardSubtitle cardSubtitle">An Indie-Developed, Large-Scale 2D Metroidvania</div>
+            <div class="projectCardImgDescGrid">
+                <div class="projectCardDesc cardDesc"> Journey through the deep and intricate world of Light, Darkness,
+                    and the six realms that surround them. Fight monsters, defeat bosses, and unearth the secrets behind
+                    the ruins of the world around you.
+                </div>
+                <img src="https://github.com/TheVizWiz/EdgeWalker-game/raw/master/GitHub/26-12-2021-image.png" alt="" class="projectCardImg cardImg">
+            </div>
+
+            <button class="projectCardLink cardLink"></button>
+        </div>
+
+        <div class="projectCard" id="card2">
+            <div class="projectCardTitle cardTitle">Drone Flight Analyzer</div>
+            <div class="projectCardSubtitle cardSubtitle"></div>
+            <div class="projectCardDesc cardDesc"></div>
+            <button class="projectCardLink cardLink"></button>
+            <img src="" alt="" class="projectCardImg cardImg">
+        </div>
+
+        <div class="projectCard" id="card3">
+            <div class="projectCardTitle cardTitle">Edgewalker</div>
+            <div class="projectCardSubtitle cardSubtitle"></div>
+            <div class="projectCardDesc cardDesc"></div>
+            <button class="projectCardLink cardLink"></button>
+            <img src="" alt="" class="projectCardImg cardImg">
+        </div>
+
     </div>
 </div>
 

@@ -1,14 +1,20 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Times New Roman", serif;
+  font-family: "Outfit", serif;
   color: #bbbcbf;
 }
 
 body {
   background-color: #121212;
   margin: 0;
-  height: 200vh;
+}
+body .cardTitle {
+  font-size: max(6vw, 200%);
+}
+body .cardSubtitle {
+  font-size: max(2.5vw, 140%);
+  font-style: italic;
 }
 
 .header {
@@ -125,7 +131,7 @@ body {
 }
 .titleSpace .titleGrid .titleJobs {
   text-align: left;
-  font-size: max(15vw * 3 / 5, 200%);
+  font-size: max(9vw, 200%);
   font-weight: 300;
 }
 .titleSpace .titleGrid .titleJobs * {
@@ -165,7 +171,7 @@ body {
   font-family: Outfit, sans-serif;
   text-align: center;
   margin: 3vh 0 3vh 0;
-  font-size: max(15vw * 3 / 5, 200%);
+  font-size: max(9vw, 200%);
   font-weight: bold;
 }
 .project .projectGrid {
@@ -174,12 +180,23 @@ body {
   grid-gap: 1vh;
   justify-items: center;
 }
+.project .projectCardImgDescGrid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.project .projectCardImg {
+  object-fit: fill;
+  align-self: center;
+  justify-self: center;
+}
+.project .projectCardDesc {
+  padding: 2% 2% 2% 0;
+  size: max(2.5vw, 140%);
+}
 .project .projectCard {
   width: 90%;
-  height: 100px;
+  padding: 1vmax;
   display: grid;
-  grid-template-columns: 70% 1% 29%;
-  grid-template-rows: 100%;
   border-radius: 10px;
   background-color: #1a1a1a;
 }
